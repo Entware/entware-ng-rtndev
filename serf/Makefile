@@ -25,7 +25,7 @@ define Package/libserf
 	TITLE:=High performance C-based HTTP client library
 	URL:=https://serf.apache.org/
 	MAINTAINER:=Entware team, http://entware.net
-	DEPENDS:=+libopenssl +libaprutil
+	DEPENDS:=+libopenssl +libaprutil +unixodbc
 endef
 
 define Package/libserf/description
