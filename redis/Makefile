@@ -39,6 +39,8 @@ MAKE_FLAGS += \
 	MALLOC="libc" \
 	PREFIX="$(PKG_INSTALL_DIR)/opt"
 
+TARGET_LDFLAGS+=-ldl
+
 define Build/Compile
 	sed -e 's#^\(REAL_CFLAGS.* \)$$$$(ARCH)#\1#g' -i $(PKG_BUILD_DIR)/deps/hiredis/Makefile
 	$(call Build/Compile/Default,-C $(PKG_BUILD_DIR)/deps hiredis linenoise lua PLAT=linux)
