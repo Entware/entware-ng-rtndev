@@ -5,7 +5,7 @@
    default_prefix='Debug'
  else:
 -  default_incdir='/usr'
-+  default_incdir='/home/ryzhovau/Entware-ng/staging_dir/target-mipsel_mips32r2_uClibc-1.0.16/opt'
++  default_incdir='$STAGING_DIR/opt'
    default_libdir='$PREFIX/lib'
    default_prefix='/usr/local'
  
