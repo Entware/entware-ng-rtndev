@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=entware-opt
 PKG_VERSION:=222108
-PKG_RELEASE:=3
+PKG_RELEASE:=4
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -17,7 +17,7 @@ define Package/entware-opt
 	SECTION:=libs
 	CATEGORY:=Libraries
 	DEPENDS:=+libc +libgcc +libstdcpp +libpthread +librt \
-		+ldconfig +findutils-find +terminfo +USE_GLIBC:locales
+		+ldconfig +findutils +terminfo +USE_GLIBC:locales
 	TITLE:=provides basic toolchain libraries (dummy)
 	MAINTAINER:=Entware team, http://entware.net
 endef
