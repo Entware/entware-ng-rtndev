@@ -1,8 +1,8 @@
 --- a/src/gwsocket.c
 +++ b/src/gwsocket.c
-@@ -93,7 +93,7 @@
+@@ -279,7 +279,7 @@
  int
- open_fifo (void)
+ open_fifoin (void)
  {
 -  const char *fifo = "/tmp/wspipein.fifo";
 +  const char *fifo = "/opt/tmp/wspipein.fifo";
@@ -22,7 +22,7 @@
  
 --- a/src/websocket.h
 +++ b/src/websocket.h
-@@ -84,8 +84,8 @@
+@@ -90,8 +90,8 @@
  #define MAX(a,b) (((a)>(b))?(a):(b))
  #include "gslist.h"
  
