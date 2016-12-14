@@ -10,12 +10,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=cups-filters
-PKG_VERSION:=1.11.4
+PKG_VERSION:=1.13.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_URL:=https://www.openprinting.org/download/$(PKG_NAME)
-PKG_MD5SUM:=2261ef8250fb3e9870cb6c4905e73b01
+PKG_MD5SUM:=ec95f66982beeb3876a2e6187c084597
 
 PKG_INSTALL:=1
 
@@ -63,14 +63,9 @@ define Package/cups-filters/install
 	$(INSTALL_CONF) \
 	    $(PKG_INSTALL_DIR)/opt/etc/fonts/conf.d/99pdftoopvp.conf \
 	    $(1)/opt/etc/fonts/conf.d
-	$(INSTALL_DIR) $(1)/opt/lib/cups/{backend,filter}
+	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) $(PKG_INSTALL_DIR)/opt/lib/lib*.so* $(1)/opt/lib
-	$(INSTALL_BIN) \
-	    $(PKG_INSTALL_DIR)/opt/lib/cups/backend/* \
-	    $(1)/opt/lib/cups/backend
-	$(CP) \
-	    $(PKG_INSTALL_DIR)/opt/lib/cups/filter/* \
-	    $(1)/opt/lib/cups/filter
+	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups $(1)/opt/lib
 	$(INSTALL_DIR) $(1)/opt/sbin
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/cups-browsed $(1)/opt/sbin
 endef
