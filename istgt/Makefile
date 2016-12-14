@@ -10,7 +10,7 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=istgt
 PKG_VERSION:=20150713
 PKG_REV:=14b0bacacedc9ac7e96fc34cf720800047f6194a
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
@@ -27,7 +27,7 @@ define Package/istgt
 	SECTION:=net
 	CATEGORY:=Network
 	SUBMENU:=Filesystem
-	DEPENDS:=+libopenssl +libpthread +libevent2
+	DEPENDS:=+libpthread +libevent2
 	TITLE:=An iSCSI target implementation
 	URL:=http://www.peach.ne.jp/archives/istgt/
 	MAINTAINER:=Entware team, http://entware.net
