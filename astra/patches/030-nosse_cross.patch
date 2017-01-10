@@ -1,0 +1,19 @@
+--- a/configure.sh
++++ b/configure.sh
+@@ -138,7 +138,6 @@
+ ARCH=`echo $MACHINE | sed "s|-.*\$||"`
+ 
+ echo $ARCH | grep -q "i[3-6]86\|x86_64"
+-ISx86=$?
+ 
+ cpucheck_c()
+ {
+@@ -184,7 +184,7 @@
+             CFLAGS="$CFLAGS $CPUFLAGS"
+         fi
+     fi
+-elif [ $ISx86 -eq 0 ]; then
++elif  false ; then
+     $APP_C $CFLAGS -msse -E -x c /dev/null >/dev/null 2>&1
+     if [ $? -eq 0 ] ; then
+         CFLAGS="$CFLAGS -msse"
