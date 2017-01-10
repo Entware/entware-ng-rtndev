@@ -25,6 +25,11 @@ define Package/msd_lite
 	URL:=http://www.netlab.linkpc.net/wiki/index?id=en:software:msd:lite
 endef
 
+define Package/msd_lite/description
+ A lightweight version of Multi Stream daemon, a program for organizing
+ streaming IP TV on the network via HTTP.
+endef
+
 define Package/msd_lite/conffiles
 /opt/etc/msd_lite.conf
 endef
