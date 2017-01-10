@@ -23,11 +23,14 @@ include $(INCLUDE_DIR)/package.mk
 define Package/astra
 	SECTION:=multimedia
 	CATEGORY:=Multimedia
-	TITLE:=Astra (Advanced Streamer) - software to organize Digital TV Broadcasting Service
+	TITLE:=advanced streamer
 	DEPENDS:=+libopenssl +libpthread +librt
 	URL:=https://cesbo.com/en/astra/
 endef
 
+define Package/astra/description
+ Astra is a software to organize Digital TV Broadcasting Service.
+endef
 
 define Build/Configure
 	cd $(PKG_BUILD_DIR); \
