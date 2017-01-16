@@ -14,11 +14,10 @@ PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
-PKG_SOURCE_URL:=https://github.com/GFW-Fucker/ShadowVPN.git
-PKG_SOURCE_PROTO:=git
+PKG_SOURCE_URL:=https://github.com/aa65535/openwrt-shadowvpn/releases/download/v0.2.0/
 PKG_SOURCE_VERSION:=$(PKG_REV)
 
-PKG_INSTALL:=1
+PKG_INSTALL:=2
 PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/package.mk
