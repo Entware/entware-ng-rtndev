@@ -26,14 +26,9 @@ define Package/cpubench/description
  OpenWRT's CPU Benchmark utility.
 endef
 
-define Build/Prepare
-	mkdir -p $(PKG_BUILD_DIR)
-	$(CP) ./src/openwrt_cpu_bench_v06.c $(PKG_BUILD_DIR)
-endef
-
 define Build/Compile
-	$(TARGET_CC) -O0 -c -o $(PKG_BUILD_DIR)/cpubench.o $(PKG_BUILD_DIR)/openwrt_cpu_bench_v06.c
-	$(TARGET_CC) $(TARGET_LDFLAGS) -o $(PKG_BUILD_DIR)/cpubench $(PKG_BUILD_DIR)/cpubench.o
+	$(TARGET_CC) -O0 -c $(TARGET_LDFLAGS) -o $(PKG_BUILD_DIR)/cpubench \
+	    $(PKG_BUILD_DIR)/openwrt_cpu_bench_v06.c
 endef
 
 define Package/cpubench/install
