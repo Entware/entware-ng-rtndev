@@ -5,7 +5,6 @@
 # See /LICENSE for more information.
 #
 # Initial port of shellinabox to OpenWrt - Jan Jaeger 25-MAR-2010
-#
 # Makefile from OnionIoT/OpenWRT-Packages was used as a start
 #
 
@@ -45,15 +44,14 @@ CONFIGURE_ARGS += \
 	--bindir="/opt/sbin"
 
 define Package/shellinabox/install
-	# install the binary
 	$(INSTALL_DIR) $(1)/opt/sbin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/shellinaboxd $(1)/opt/sbin
-	# install the init.d file
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S88shellinaboxd $(1)/opt/etc/init.d
-	# install the css files
 	$(INSTALL_DIR) $(1)/opt/lib/shellinabox
-	$(INSTALL_DATA) $(PKG_BUILD_DIR)/shellinabox/{black-on-white,color,monochrome,white-on-black}.css $(1)/opt/lib/shellinabox
+	$(INSTALL_DATA) \
+	    $(PKG_BUILD_DIR)/shellinabox/{black-on-white,color,monochrome,white-on-black}.css \
+	    $(1)/opt/lib/shellinabox
 endef
 
 $(eval $(call BuildPackage,shellinabox))
