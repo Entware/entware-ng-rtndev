@@ -8,12 +8,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=cups-pdf
-PKG_VERSION:=3.0beta2
+PKG_VERSION:=3.0.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)_$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=http://www.cups-pdf.de/src
-PKG_MD5SUM:=fabfa3a96551a7dd2c466f8b120c13a5
+PKG_HASH:=a0b94d09ccf92761a83e1af13fcdbfba737d7fcbbe2774ec24297ddbbf13aebe
 
 include $(INCLUDE_DIR)/package.mk
 
