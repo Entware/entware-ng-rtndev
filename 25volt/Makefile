@@ -30,15 +30,6 @@ BINARIES:= \
 	usb_ups_apc_smart \
 	usb_ups_powercom_wow
 
-define Build/Prepare
-	$(INSTALL_DIR) $(PKG_BUILD_DIR)
-	$(CP) $(foreach bin,$(BINARIES),./src/$(bin).c) \
-	    $(PKG_BUILD_DIR)
-endef
-
-define Build/Configure
-endef
-
 define Build/Compile
 	for bin in $(BINARIES); \
 	do \
