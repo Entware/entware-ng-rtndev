@@ -69,7 +69,7 @@ define Host/Install
 endef
 
 define Build/Compile
-	mkdir $(PKG_BUILD_DIR)/bin
+	mkdir -p $(PKG_BUILD_DIR)/bin
 	$(CP) $(HOST_BUILD_DIR)/tgl/bin/*  $(PKG_BUILD_DIR)/bin
 	$(call Build/Compile/Default)
 endef
