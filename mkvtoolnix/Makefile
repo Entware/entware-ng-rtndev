@@ -50,7 +50,7 @@ TARGET_LDFLAGS += \
 	-lintl \
 
 define Build/Compile
-	cd $(PKG_BUILD_DIR); rake
+	cd $(PKG_BUILD_DIR); rake --jobs=1
 endef
 
 
