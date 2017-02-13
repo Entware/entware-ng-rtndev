@@ -35,15 +35,15 @@ endef
 
 define Package/nginx-extras/description
  nginx is an HTTP and reverse proxy server, as well as a mail proxy server,
- written by Igor Sysoev. This  mainline version where all available
- plugins and patches are taken close to Debian nginx-extras package.
+ written by Igor Sysoev. This is mainline version where all available
+ plugins and patches are taken from Debian nginx-extras package.
 endef
 
 TARGET_CFLAGS += \
 	-I$(STAGING_DIR)/opt/include/libxml2
 
 TARGET_LDFLAGS += \
-	-lxml2 -lz -lm -ldl
+	-lxml2
 
 define Build/Configure
 	( cd $(PKG_BUILD_DIR) ; \
