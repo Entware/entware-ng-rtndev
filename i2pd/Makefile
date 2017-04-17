@@ -8,8 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=i2pd
-PKG_VERSION:=2.12
-PKG_REV:=7ae40d89c1921981c89ec123dabcf83ee23a32fa
+PKG_VERSION:=2.13
+PKG_REV:=e4c038762b5378e2fc3f8b1db252c3126cf2014f
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
@@ -23,7 +23,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/i2pd
 	SECTION:=net
 	CATEGORY:=Network
-	DEPENDS:=+libopenssl +boost-filesystem +boost-regex +boost-program_options +boost-date_time +USE_UCLIBC:libatomic
+	DEPENDS:=+libopenssl +boost-filesystem +boost-regex +boost-program_options +boost-date_time +libatomic
 	TITLE:=simplified C++ implementation of I2P client
 	URL:=$(PKG_SOURCE_URL)
 	MAINTAINER:=Entware team, http://entware.net
@@ -33,9 +33,7 @@ define Package/i2pd/description
  i2p router for Linux written on C++.
 endef
 
-ifdef CONFIG_USE_UCLIBC
 TARGET_LDFLAGS += -latomic
-endif
 
 define Package/i2pd/conffiles
 /opt/etc/i2p.conf
