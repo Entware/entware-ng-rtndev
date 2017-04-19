@@ -25,7 +25,7 @@ define Package/python-gevent
 	SECTION:=lang
 	CATEGORY:=Languages
 	SUBMENU:=Python
-	DEPENDS:=+python-greenlet
+	DEPENDS:=+python-greenlet +librt
 	TITLE:=Python networking library
 	URL:=http://www.gevent.org/
 	MAINTAINER:=Entware team, http://entware.net
