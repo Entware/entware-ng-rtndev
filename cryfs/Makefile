@@ -25,7 +25,7 @@ define Package/cryfs
 	SECTION:=utils
 	CATEGORY:=Utilities
 	SUBMENU:=Filesystem
-	DEPENDS:=+fuse-utils +libopenssl +libcryptoxx +libcurl +boost-program_options +boost-thread +boost-filesystem +boost-date_time
+	DEPENDS:=+fuse-utils +libopenssl +libcryptoxx +libcurl +boost-program_options +boost-thread +boost-filesystem +boost-date_time @!LINUX_2_6_22
 	TITLE:=CryFS encrypts your files, so you can safely store them anywhere
 	URL:=https://www.cryfs.org
 	MAINTAINER:=Entware team, http://entware.net
