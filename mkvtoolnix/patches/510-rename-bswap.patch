@@ -128,7 +128,7 @@ diff -Naur a/src/extract/xtr_wav.cpp b/src/extract/xtr_wav.cpp
 diff -Naur a/src/input/r_mpeg_ts.cpp b/src/input/r_mpeg_ts.cpp
 --- a/src/input/r_mpeg_ts.cpp	2016-11-29 21:52:28.000000000 +0300
 +++ b/src/input/r_mpeg_ts.cpp	2016-12-24 23:52:45.162472911 +0300
-@@ -966,7 +966,7 @@
+@@ -1258,7 +1258,7 @@
  mpeg_ts_reader_c::calculate_crc(void const *buffer,
                                  size_t size)
    const {

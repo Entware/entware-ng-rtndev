@@ -2,7 +2,7 @@ This patch is for uclibc. It is not needed in entware-3x
 diff -Naur a/src/common/hevc.cpp b/src/common/hevc.cpp
 --- a/src/common/hevc.cpp	2016-11-29 21:52:28.000000000 +0300
 +++ b/src/common/hevc.cpp	2016-12-24 21:35:25.973438911 +0300
-@@ -2244,8 +2244,8 @@
+@@ -2214,8 +2214,8 @@
    if (0 >= height)
      height = get_height();
  
@@ -16,7 +16,7 @@ diff -Naur a/src/common/hevc.cpp b/src/common/hevc.cpp
 diff -Naur a/src/common/mpeg4_p10.cpp b/src/common/mpeg4_p10.cpp
 --- a/src/common/mpeg4_p10.cpp	2016-11-29 21:52:28.000000000 +0300
 +++ b/src/common/mpeg4_p10.cpp	2016-12-24 21:35:25.921438911 +0300
-@@ -1742,8 +1742,8 @@
+@@ -1734,8 +1734,8 @@
    if (0 >= height)
      height = get_height();
  
@@ -181,7 +181,7 @@ diff -Naur a/src/merge/cluster_helper.h b/src/merge/cluster_helper.h
 diff -Naur a/src/merge/generic_packetizer.cpp b/src/merge/generic_packetizer.cpp
 --- a/src/merge/generic_packetizer.cpp	2016-11-29 21:52:28.000000000 +0300
 +++ b/src/merge/generic_packetizer.cpp	2016-12-24 21:35:25.829438911 +0300
-@@ -981,12 +981,12 @@
+@@ -989,12 +989,12 @@
              m_ti.m_aspect_ratio = (float)m_hvideo_pixel_width * m_ti.m_aspect_ratio / (float)m_hvideo_pixel_height;
  
            if (m_ti.m_aspect_ratio > ((float)m_hvideo_pixel_width / (float)m_hvideo_pixel_height)) {
@@ -199,7 +199,7 @@ diff -Naur a/src/merge/generic_packetizer.cpp b/src/merge/generic_packetizer.cpp
 diff -Naur a/src/merge/output_control.cpp b/src/merge/output_control.cpp
 --- a/src/merge/output_control.cpp	2016-11-29 21:52:28.000000000 +0300
 +++ b/src/merge/output_control.cpp	2016-12-24 21:35:25.809438911 +0300
-@@ -211,7 +211,7 @@
+@@ -212,7 +212,7 @@
  
  static int64_t
  calculate_file_duration() {
@@ -252,7 +252,7 @@ diff -Naur a/src/output/p_hevc.cpp b/src/output/p_hevc.cpp
 diff -Naur a/src/output/p_mpeg4_p10.cpp b/src/output/p_mpeg4_p10.cpp
 --- a/src/output/p_mpeg4_p10.cpp	2016-11-29 21:52:28.000000000 +0300
 +++ b/src/output/p_mpeg4_p10.cpp	2016-12-24 21:35:25.789438911 +0300
-@@ -86,8 +86,8 @@
+@@ -94,8 +94,8 @@
  
    auto par = static_cast<double>(result.numerator) / static_cast<double>(result.denominator);
  
