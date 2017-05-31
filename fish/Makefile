@@ -25,7 +25,7 @@ define Package/fish
 	CATEGORY:=Utilities
 	SUBMENU:=Shells
 	TITLE:=A smart and user-friendly command line shell
-	DEPENDS:=+libncurses +libstdcpp +coreutils-whoami @!LINUX_2_6_22
+	DEPENDS:=+libncurses +libstdcpp +coreutils-whoami +PACKAGE_librt:librt
 	URL:=https://fishshell.com
 
 endef
@@ -37,12 +37,8 @@ define Package/fish/description
 endef
 
 CONFIGURE_VARS += ac_cv_file__proc_self_stat=yes
-
-MAKE_FLAGS += EXTRA_CXXFLAGS=" -I$(STAGING_DIR)/opt/include"
-
-#define Package/fish/conffiles
-#/opt/etc/fish.conf
-#endef
+TARGET_CXXFLAGS += -std=c++0x
+MAKE_FLAGS += EXTRA_CXXFLAGS="-I$(STAGING_DIR)/opt/include"
 
 define Package/fish/install
 	$(INSTALL_DIR) $(1)/opt/bin
