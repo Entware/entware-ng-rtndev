@@ -1,0 +1,14 @@
+--- a/src/cryfs-cli/Cli.cpp
++++ b/src/cryfs-cli/Cli.cpp
+@@ -275,7 +275,11 @@
+         if (minutes == none) {
+             return none;
+         }
++#if !defined(__UCLIBC__)
+         uint64_t millis = std::round(60000 * (*minutes));
++#else
++        uint64_t millis = floor(60000 * (*minutes));
++#endif
+         return make_unique_ref<CallAfterTimeout>(milliseconds(millis), callback);
+     }
+ 

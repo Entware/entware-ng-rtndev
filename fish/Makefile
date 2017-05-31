@@ -27,7 +27,6 @@ define Package/fish
 	TITLE:=A smart and user-friendly command line shell
 	DEPENDS:=+libncurses +libstdcpp +coreutils-whoami +PACKAGE_librt:librt
 	URL:=https://fishshell.com
-
 endef
 
 define Package/fish/description

@@ -1,0 +1,30 @@
+--- a/src/cpp-utils/assert/backtrace.cpp
++++ b/src/cpp-utils/assert/backtrace.cpp
+@@ -1,5 +1,7 @@
+ #include "backtrace.h"
++#if !defined(__UCLIBC__)
+ #include <execinfo.h>
++#endif
+ #include <signal.h>
+ #include <iostream>
+ #include <unistd.h>
+@@ -40,6 +42,7 @@
+         return demangle(backtraceLine.substr(startMangledName+1, endMangledName-startMangledName-1)) + ": (" + backtraceLine.substr(0, startMangledName) + backtraceLine.substr(endMangledName);
+     }
+ 
++#if !defined(__UCLIBC__)
+     string backtrace_to_string(void *array[], size_t size) {
+         ostringstream result;
+         char **ptr = backtrace_symbols(array, size);
+@@ -56,6 +59,11 @@
+         size_t size = ::backtrace(array, MAX_SIZE);
+         return backtrace_to_string(array, size);
+     }
++#else
++    string backtrace() {
++        return 0;
++    }
++#endif
+ 
+     void sigsegv_handler(int) {
+         LOG(ERROR, "SIGSEGV\n{}", backtrace());
