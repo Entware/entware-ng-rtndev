@@ -46,6 +46,9 @@ define Package/gerbera/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME) $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/share
 	$(CP) $(PKG_INSTALL_DIR)/opt/share/$(PKG_NAME) $(1)/opt/share
+	$(INSTALL_DIR) $(1)/opt/etc/init.d
+	$(INSTALL_BIN) files/S90$(PKG_NAME) $(1)/opt/etc/init.d
+	$(INSTALL_DIR) $(1)/opt/etc/$(PKG_NAME)
 endef
 
 $(eval $(call BuildPackage,gerbera))
