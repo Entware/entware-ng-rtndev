@@ -53,4 +53,9 @@ define Package/ptokax/install
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/cfg.example/*.xml $(1)/opt/share/ptokax/cfg
 endef
 
+define Package/ptokax/conffiles
+/opt/share/ptokax/cfg/BanList.xml
+/opt/share/ptokax/cfg/RegisteredUsers.xml
+endef
+
 $(eval $(call BuildPackage,ptokax))
