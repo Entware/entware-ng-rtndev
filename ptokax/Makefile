@@ -9,13 +9,14 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ptokax
 PKG_VERSION:=0.5.2.2
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_SOURCE:=$(PKG_VERSION)-nix-src.tgz
 PKG_SOURCE_URL:=http://www.ptokax.org/files
 PKG_MD5SUM:=0d5ca7ae81be69eb351fadfd1a498217
 
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/nls.mk
 
 PKG_UNPACK=$(HOST_TAR) -C $(PKG_BUILD_DIR) --strip-components=1 -xzf $(DL_DIR)/$(PKG_SOURCE)
 
@@ -23,7 +24,7 @@ define Package/ptokax
 	SECTION:=net
 	CATEGORY:=Network
 	SUBMENU:=P2P
-	DEPENDS:=+liblua +libpthread +zlib +libstdcpp +librt
+	DEPENDS:=+liblua +libpthread +zlib +libstdcpp +librt $(ICONV_DEPENDS)
 	TITLE:=DC hub
 	URL:=http://www.czdc.org/PtokaX/
 	MAINTAINER:=Entware team, http://entware.net
@@ -35,7 +36,7 @@ define Package/ptokax/description
 endef
 
 TARGET_CFLAGS += -DTIXML_USE_STL
-TARGET_LDFLAGS += -ldl
+TARGET_LDFLAGS += -ldl -liconv
 
 define Build/Compile
 	$(MAKE_VARS) $(MAKE) -C $(PKG_BUILD_DIR)/skein $(MAKE_FLAGS)
