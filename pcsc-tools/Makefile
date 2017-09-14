@@ -8,8 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pcsc-tools
-PKG_VERSION:=1.4.27
-PKG_REV:=8f2a6b311ba28c12540afb24d5dfcb2e83c95091
+PKG_VERSION:=1.5.2
+PKG_REV:=77a38773e472d9e678207e848ff42aa9be93ee39
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
@@ -17,6 +17,8 @@ PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE_URL:=https://github.com/LudovicRousseau/pcsc-tools.git
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_VERSION:=$(PKG_REV)
+
+PKG_FIXUP:=autoreconf
 
 include $(INCLUDE_DIR)/package.mk
 
