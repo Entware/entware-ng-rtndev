@@ -1,0 +1,15 @@
+--- a/src/hyperloglog.c
++++ b/src/hyperloglog.c
+@@ -1011,8 +1011,11 @@
+                    0.03738027*pow(zl,5) +
+                   -0.005384159*pow(zl,6) +
+                    0.00042419*pow(zl,7);
+-
++#ifdef __UCLIBC__
++    E  = llround(alpha*m*(m-ez)*(1/(E+beta)));
++#else
+     E  = llroundl(alpha*m*(m-ez)*(1/(E+beta)));
++#endif
+     return (uint64_t) E;
+ }
+ 
