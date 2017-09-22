@@ -48,9 +48,11 @@ CONFIGURE_ARGS += \
 	--with-gs-path=/opt/bin/gs \
 	--with-pdftops-path=/opt/bin/gs \
 	--with-test-font-path=/opt/share/fonts/dejavu/DejaVuSans.ttf \
-	--with-shell=/bin/sh
+	--with-shell=/bin/sh \
+	LIBQPDF_CFLAGS=-I$(STAGING_DIR)/opt/include \
+	LIBQPDF_LIBS=-L$(STAGING_DIR)/opt/libs
 
-TARGET_LDFLAGS += -liconv
+TARGET_LDFLAGS += -liconv -lqpdf
 
 define Package/cups-filters/install
 	$(INSTALL_DIR) $(1)/opt/bin
