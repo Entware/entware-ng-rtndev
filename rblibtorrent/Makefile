@@ -9,12 +9,12 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=rblibtorrent
-PKG_VERSION:=1.0.11
+PKG_VERSION:=1.1.3
 PKG_RELEASE:=1
 
 PKG_SOURCE:=libtorrent-rasterbar-$(PKG_VERSION).tar.gz
-PKG_SOURCE_URL:=https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_0_11
-PKG_HASH:=828d686770346f6da2c143c5a2844c5f5e407eb4a37982e90022763508abd62f
+PKG_SOURCE_URL:=https://github.com/arvidn/libtorrent/releases/download/libtorrent-1_1_3
+PKG_HASH:=44196a89932c26528f5db19289d0f0f4130730a61dccc61c9f1eac9ad3e881d8
 PKG_BUILD_DIR:=$(BUILD_DIR)/libtorrent-rasterbar-$(PKG_VERSION)
 PKG_FIXUP:=autoreconf
 PKG_INSTALL:=1
@@ -26,7 +26,8 @@ define Package/rblibtorrent
   CATEGORY:=Libraries
   TITLE:=Rasterbar BitTorrent library
   URL:=http://www.rasterbar.com/products/libtorrent/
-  DEPENDS:=+boost-python +boost-filesystem +boost-regex +boost-thread +boost-program_options +boost-system +libopenssl
+  DEPENDS:=+boost-python +boost-filesystem +boost-regex +boost-thread +boost-program_options +boost-system +libopenssl \
+	+boost-random
 endef
 
 define Package/rblibtorrent/description
@@ -38,7 +39,7 @@ endef
 CONFIGURE_ARGS+= \
 	--disable-debug \
 	--enable-python-binding \
-	--with-ssl=$(STAGING_DIR)/opt \
+	--with-openssl=$(STAGING_DIR)/opt \
 	--with-boost=$(STAGING_DIR)/opt/include \
 	--with-boost-libdir=$(STAGING_DIR)/opt/lib \
 	--with-boost-python=yes
