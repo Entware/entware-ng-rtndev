@@ -8,8 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=pixelserv-tls
-PKG_VERSION:=V35.HZ12.Kk
-PKG_REV:=444c082e16226ecb572f2bebdf88930f31c4661b
+PKG_VERSION:=2.0.1
+PKG_REV:=e788c7501b5e61fbd7ca6728d6fe673b26ed3dd8
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.bz2
@@ -31,9 +31,8 @@ define Package/pixelserv-tls
 endef
 
 define Package/pixelserv-tls/description
- pixelserv-tls is the tiny webserver that responds to all requests with
- "nothing" and yet particularly useful for network connections with high
- latency and metered bandwidth.
+ pixelserv-tls is a tiny bespoke webserver for adblock
+ with HTTP/1.1 and HTTPS support
 endef
 
 define Build/Compile
@@ -44,6 +43,7 @@ define Build/Compile
 		$(PKG_BUILD_DIR)/socket_handler.c \
 		$(PKG_BUILD_DIR)/pixelserv.c \
 		$(PKG_BUILD_DIR)/certs.c \
+		$(PKG_BUILD_DIR)/logger.c \
 		-o $(PKG_BUILD_DIR)/pixelserv-tls
 endef
 
